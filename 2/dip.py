@@ -33,12 +33,15 @@ time1 = time.time()
 
 ######## CODE STARTS FROM HERE ########
 n = uno()
-ans = 0
-for i in range(1, n):
-    if i % 3 == 0 or i % 5 == 0:
-        ans += i
+a, b, c, ans = 0, 1, 0, 0
+while c <= n:
+    c = a + b
+    if ~c & 1:
+        ans += c
+    b, a = c, b
 print(ans)
+
 
 # End Time
 time2 = time.time()
-print("Time Taken:", (time2 - time1) * 1000)
+print("\nTime Taken:", (time2 - time1) * 1000)
